@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { InsuranceTrustBar } from './components/InsuranceTrustBar'
@@ -8,9 +8,18 @@ import { BeforeAfterGallery } from './components/BeforeAfterGallery'
 import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import { StickyBottomBar } from './components/StickyBottomBar'
+import { LegalModal, LegalTab } from './components/LegalModal'
 import { MessageCircle } from 'lucide-react'
 
 export const App: React.FC = () => {
+  const [legalModalOpen, setLegalModalOpen] = useState(false)
+  const [activeLegalTab, setActiveLegalTab] = useState<LegalTab>('terminos')
+
+  const handleOpenLegal = (tab: LegalTab) => {
+    setActiveLegalTab(tab)
+    setLegalModalOpen(true)
+  }
+
   return (
     <div className="min-h-screen flex flex-col selection:bg-[#c0272d] selection:text-white">
       <Navbar />
@@ -24,8 +33,14 @@ export const App: React.FC = () => {
         <ContactSection />
       </main>
 
-      <Footer />
+      <Footer onOpenLegal={handleOpenLegal} />
       <StickyBottomBar />
+
+      <LegalModal
+        isOpen={legalModalOpen}
+        initialTab={activeLegalTab}
+        onClose={() => setLegalModalOpen(false)}
+      />
 
       {/* Floating WhatsApp Bubble for Desktop */}
       <a
