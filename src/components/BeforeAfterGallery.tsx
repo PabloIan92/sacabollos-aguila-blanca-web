@@ -15,23 +15,23 @@ interface BeforeAfterCase {
 const GALLERY_CASES: BeforeAfterCase[] = [
   {
     id: 'hilux',
-    title: 'Toyota Hilux 4x4',
-    vehicle: 'Toyota Hilux SRV — Capot y Techo',
-    damage: 'Más de 70 impactos de granizo seco con nervaduras deformadas tras tormenta.',
-    beforeImg: '/images/hail-dent.jpg',
-    afterImg: '/images/toyota-hilux.jpg',
+    title: 'Toyota Hilux 4x4 (Zárate)',
+    vehicle: 'Toyota Hilux 4x4 — Capot y Guardabarros',
+    damage: 'Tormenta de granizo con múltiples impactos en chapa original.',
+    beforeImg: '/images/hilux-pdr-before.jpg',
+    afterImg: '/images/hilux-pdr-after.jpg',
     time: '24 horas hábiles',
-    locationNote: 'Preservación 100% de la pintura blanca de fábrica.',
+    locationNote: 'El mismo vehículo: la chapa recuperó su forma sin tocar la pintura blanca de fábrica.',
   },
   {
     id: 'amarok',
-    title: 'Volkswagen Amarok V6',
-    vehicle: 'Volkswagen Amarok V6 — Puerta Delantera y Lateral',
-    damage: 'Portazo profundo de estacionamiento con pliegue marcado sobre nervio vivo.',
-    beforeImg: '/images/car-hood.jpg',
-    afterImg: '/images/vw-amarok-v6.jpg',
+    title: 'Volkswagen Amarok V6 (Pacheco)',
+    vehicle: 'Volkswagen Amarok V6 — Puerta y Nervadura',
+    damage: 'Portazo profundo de estacionamiento sobre el nervio lateral de la chapa.',
+    beforeImg: '/images/amarok-pdr-before.jpg',
+    afterImg: '/images/amarok-pdr-after.jpg',
     time: '4 horas en el mismo día',
-    locationNote: 'Línea de diseño recuperada sin masilla ni repintado.',
+    locationNote: 'El mismo vehículo: nervadura recuperada sin masillar ni pintar.',
   },
 ]
 
@@ -64,13 +64,13 @@ export const BeforeAfterGallery: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#123a6b]/10 border border-[#123a6b]/20 text-xs font-mono font-bold uppercase tracking-wider text-[#123a6b] mb-3">
           <Sparkles className="w-3.5 h-3.5 text-[#c0272d]" />
-          <span>Casos Reales en Argentina</span>
+          <span>Evidencia Real • El Mismo Vehículo</span>
         </div>
         <h2 className="font-display text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-[#123a6b]">
           Fotos de <span className="text-[#c0272d]">Antes y Después</span>
         </h2>
         <p className="mt-3 text-[#475569] text-base sm:text-lg font-sans">
-          Deslizá el control hacia los lados para comprobar cómo borramos el daño en los autos más utilizados del país.
+          Deslizá el control hacia los lados para ver cómo desaparecen los bollos del mismo auto sin alterar la pintura.
         </p>
       </div>
 
@@ -105,28 +105,28 @@ export const BeforeAfterGallery: React.FC = () => {
           onTouchMove={handleTouchMove}
           className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden cursor-ew-resize select-none border-2 border-[#d3d9de] shadow-inner bg-slate-900"
         >
-          {/* DESPUÉS (Background: Restored Argentine car) */}
+          {/* DESPUÉS (Background: Restored car) */}
           <img
             src={activeCase.afterImg}
-            alt={`Resultado PDR en ${activeCase.vehicle}`}
+            alt={`Mismo vehículo restaurado: ${activeCase.vehicle}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded bg-[#123a6b] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md">
-            ✓ DESPUÉS (Restaurado)
+            ✓ DESPUÉS (Restaurado sin masilla)
           </div>
 
-          {/* ANTES (Foreground clipped: Dents and damage) */}
+          {/* ANTES (Foreground clipped: Exact same car with dents) */}
           <div
             className="absolute inset-0 overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <img
               src={activeCase.beforeImg}
-              alt={`Daño inicial en chapa ${activeCase.vehicle}`}
+              alt={`Mismo vehículo con daño previo: ${activeCase.vehicle}`}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded bg-[#c0272d] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md">
-              ⚠️ ANTES (Impacto)
+              ⚠️ ANTES (Impacto en la chapa)
             </div>
           </div>
 
@@ -135,7 +135,7 @@ export const BeforeAfterGallery: React.FC = () => {
             className="absolute top-0 bottom-0 z-30 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] cursor-ew-resize"
             style={{ left: `${sliderPosition}%` }}
           >
-            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#123a6b] text-white shadow-xl flex items-center justify-center border-2 border-white">
+            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#123a6b] text-white shadow-xl flex items-center justify-center border-2 border-white">
               <MoveHorizontal className="w-5 h-5 text-white" />
             </div>
           </div>
@@ -150,8 +150,8 @@ export const BeforeAfterGallery: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#475569] mt-1 font-sans">
               {activeCase.damage} • <strong className="text-[#3f7d4f] font-semibold">Tiempo: {activeCase.time}</strong>
             </p>
-            <p className="text-[11px] text-slate-500 font-mono mt-0.5">
-              {activeCase.locationNote}
+            <p className="text-xs text-[#123a6b] font-mono font-semibold mt-1">
+              ✓ {activeCase.locationNote}
             </p>
           </div>
 
