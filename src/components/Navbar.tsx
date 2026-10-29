@@ -9,18 +9,18 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo & Brand */}
-          <a href="#" className="flex items-center gap-3.5 group shrink-0">
+          <a href="#" className="flex items-center gap-3 group shrink-0">
             <img
-              src="/assets/logo-aguila-blanca.jpg"
+              src="/assets/aguila-simbolo-transparente.png"
               alt="Águila Blanca Sacabollos"
-              className="h-11 sm:h-14 md:h-15 w-auto object-contain rounded-lg shadow-md border border-white/30 shrink-0 group-hover:border-[#ffd166] transition-all"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain shrink-0 filter drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)] group-hover:scale-105 transition-transform"
             />
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-display text-xl sm:text-2xl font-bold tracking-wider text-white uppercase group-hover:text-[#ffd166] transition-colors">
+                <span className="font-display text-xl sm:text-2xl font-black tracking-wider text-white uppercase group-hover:text-[#ffd166] transition-colors">
                   Águila Blanca
                 </span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
               </div>
               <p className="text-[11px] text-sky-200 font-mono tracking-wider uppercase">
                 Taller Sacabollos Artesanal • PDR
