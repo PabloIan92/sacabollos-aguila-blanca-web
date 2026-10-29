@@ -1,15 +1,10 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
-import { TechnicalBlueprintInspector } from './components/TechnicalBlueprintInspector'
-import { BeforeAfterSlider } from './components/BeforeAfterSlider'
-import { PdrComparison } from './components/PdrComparison'
-import { CorporateCertifications } from './components/CorporateCertifications'
-import { DamageCalculator } from './components/DamageCalculator'
-import { InsurancePartners } from './components/InsurancePartners'
-import { ProcessSteps } from './components/ProcessSteps'
-import { B2BSection } from './components/B2BSection'
-import { FaqSection } from './components/FaqSection'
+import { WhatIsPdr } from './components/WhatIsPdr'
+import { Services } from './components/Services'
+import { BeforeAfterGallery } from './components/BeforeAfterGallery'
+import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import { StickyBottomBar } from './components/StickyBottomBar'
 import { MessageCircle } from 'lucide-react'
@@ -21,19 +16,10 @@ export const App: React.FC = () => {
 
       <main className="flex-grow">
         <Hero />
-        <div id="planimetria">
-          <TechnicalBlueprintInspector />
-        </div>
-        <BeforeAfterSlider />
-        <PdrComparison />
-        <div id="homologaciones">
-          <CorporateCertifications />
-        </div>
-        <DamageCalculator />
-        <InsurancePartners />
-        <ProcessSteps />
-        <B2BSection />
-        <FaqSection />
+        <WhatIsPdr />
+        <Services />
+        <BeforeAfterGallery />
+        <ContactSection />
       </main>
 
       <Footer />
@@ -41,18 +27,20 @@ export const App: React.FC = () => {
 
       {/* Floating WhatsApp Bubble for Desktop */}
       <a
-        href="#cotizador"
-        className="hidden sm:flex fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-[#ffb800] hover:bg-[#ffc933] text-black shadow-2xl shadow-[#ffb800]/40 items-center gap-3 font-display font-bold text-xs uppercase tracking-wider group transition-all hover:scale-105 active:scale-95 border-2 border-white/20"
-        title="Cotizá tu reparación por WhatsApp"
+        href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20enviarles%20una%20foto%20para%20un%20presupuesto."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden sm:flex fixed bottom-6 right-6 z-50 p-4 rounded-2xl bg-[#ffb800] hover:bg-[#ffc933] text-black shadow-2xl shadow-[#ffb800]/40 items-center gap-3 font-display font-black text-xs uppercase tracking-wider group transition-all hover:scale-105 active:scale-95 border-2 border-white/20"
+        title="Enviar foto por WhatsApp"
       >
         <div className="relative">
-          <MessageCircle className="w-5 h-5 fill-black" />
+          <MessageCircle className="w-6 h-6 fill-black" />
           <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
           <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500" />
         </div>
         <div className="text-left">
-          <span className="block leading-none">¿Tenés un bollo?</span>
-          <span className="text-[10px] text-black/70 font-sans font-semibold">Cotizá sin cargo</span>
+          <span className="block leading-none text-sm">¿Tenés un bollo?</span>
+          <span className="text-[11px] text-black/75 font-sans font-semibold">Envianos tu foto</span>
         </div>
       </a>
     </div>
