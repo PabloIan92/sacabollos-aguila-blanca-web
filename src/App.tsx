@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
+import { InsuranceTrustBar } from './components/InsuranceTrustBar'
 import { WhatIsPdr } from './components/WhatIsPdr'
 import { Services } from './components/Services'
 import { BeforeAfterGallery } from './components/BeforeAfterGallery'
@@ -16,6 +17,7 @@ export const App: React.FC = () => {
 
       <main className="flex-grow">
         <Hero />
+        <InsuranceTrustBar />
         <WhatIsPdr />
         <Services />
         <BeforeAfterGallery />

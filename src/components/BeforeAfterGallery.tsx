@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { MoveHorizontal, Sparkles, MessageCircle } from 'lucide-react'
+import { MoveHorizontal, Sparkles, MessageCircle, ShieldCheck, Clock } from 'lucide-react'
 
 interface BeforeAfterCase {
   id: string
@@ -17,11 +17,11 @@ const GALLERY_CASES: BeforeAfterCase[] = [
     id: 'hilux',
     title: 'Toyota Hilux 4x4 (Zárate)',
     vehicle: 'Toyota Hilux 4x4 — Capot y Guardabarros',
-    damage: 'Tormenta de granizo con múltiples impactos en chapa original.',
+    damage: 'Impactos múltiples de tormenta de granizo sobre la nervadura del capot original.',
     beforeImg: '/images/hilux-pdr-before.jpg',
     afterImg: '/images/hilux-pdr-after.jpg',
     time: '24 horas hábiles',
-    locationNote: 'El mismo vehículo: la chapa recuperó su forma sin tocar la pintura blanca de fábrica.',
+    locationNote: 'Mismo vehículo: la chapa recuperó su forma original sin lijar ni repintar el blanco de fábrica.',
   },
   {
     id: 'amarok',
@@ -31,7 +31,7 @@ const GALLERY_CASES: BeforeAfterCase[] = [
     beforeImg: '/images/amarok-pdr-before.jpg',
     afterImg: '/images/amarok-pdr-after.jpg',
     time: '4 horas en el mismo día',
-    locationNote: 'El mismo vehículo: nervadura recuperada sin masillar ni pintar.',
+    locationNote: 'Mismo vehículo: nervadura y reflejo recuperados 100% artesanal con pintura OEM.',
   },
 ]
 
@@ -59,18 +59,22 @@ export const BeforeAfterGallery: React.FC = () => {
     }
   }
 
+  const handleClickContainer = (e: React.MouseEvent) => {
+    handleMove(e.clientX)
+  }
+
   return (
-    <section id="galeria" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#123a6b]/10 border border-[#123a6b]/20 text-xs font-mono font-bold uppercase tracking-wider text-[#123a6b] mb-3">
+    <section id="galeria" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#123a6b]/10 border border-[#123a6b]/20 text-xs font-mono font-bold uppercase tracking-wider text-[#123a6b] mb-3">
           <Sparkles className="w-3.5 h-3.5 text-[#c0272d]" />
-          <span>Evidencia Real • El Mismo Vehículo</span>
+          <span>Evidencia Real • Mismo Vehículo</span>
         </div>
         <h2 className="font-display text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-[#123a6b]">
-          Fotos de <span className="text-[#c0272d]">Antes y Después</span>
+          Casos Reales de <span className="text-[#c0272d]">Antes y Después</span>
         </h2>
         <p className="mt-3 text-[#475569] text-base sm:text-lg font-sans">
-          Deslizá el control hacia los lados para ver cómo desaparecen los bollos del mismo auto sin alterar la pintura.
+          Deslizá el control hacia los lados para comprobar cómo se recupera la chapa del mismo vehículo sin tocar la pintura.
         </p>
       </div>
 
@@ -83,10 +87,10 @@ export const BeforeAfterGallery: React.FC = () => {
               setActiveCase(item)
               setSliderPosition(50)
             }}
-            className={`px-5 py-2.5 rounded-lg font-display uppercase tracking-wider text-xs sm:text-sm font-bold transition-all ${
+            className={`px-5 py-3 rounded-xl font-display uppercase tracking-wider text-xs sm:text-sm font-bold transition-all shadow-sm ${
               activeCase.id === item.id
-                ? 'bg-[#123a6b] text-white shadow-md'
-                : 'bg-white text-[#475569] border border-[#d3d9de] hover:bg-[#eef1f3]'
+                ? 'bg-[#123a6b] text-white shadow-md ring-2 ring-[#123a6b]/20'
+                : 'bg-white text-[#475569] border-2 border-[#d3d9de] hover:bg-[#eef1f3]'
             }`}
           >
             {item.title}
@@ -98,6 +102,7 @@ export const BeforeAfterGallery: React.FC = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-3xl p-4 sm:p-7 border-2 border-[#d3d9de] shadow-ficha-lg">
         <div
           ref={containerRef}
+          onClick={handleClickContainer}
           onMouseDown={() => setIsDragging(true)}
           onMouseUp={() => setIsDragging(false)}
           onMouseLeave={() => setIsDragging(false)}
@@ -111,7 +116,7 @@ export const BeforeAfterGallery: React.FC = () => {
             alt={`Mismo vehículo restaurado: ${activeCase.vehicle}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded bg-[#123a6b] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md">
+          <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-lg bg-[#123a6b]/90 backdrop-blur-md text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md border border-white/20">
             ✓ DESPUÉS (Restaurado sin masilla)
           </div>
 
@@ -125,45 +130,53 @@ export const BeforeAfterGallery: React.FC = () => {
               alt={`Mismo vehículo con daño previo: ${activeCase.vehicle}`}
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded bg-[#c0272d] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md">
+            <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-lg bg-[#c0272d]/90 backdrop-blur-md text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md border border-white/20">
               ⚠️ ANTES (Impacto en la chapa)
             </div>
           </div>
 
           {/* Slider line & handle */}
           <div
-            className="absolute top-0 bottom-0 z-30 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] cursor-ew-resize"
+            className="absolute top-0 bottom-0 z-30 w-1 bg-white shadow-[0_0_12px_rgba(0,0,0,0.6)] cursor-ew-resize"
             style={{ left: `${sliderPosition}%` }}
           >
-            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#123a6b] text-white shadow-xl flex items-center justify-center border-2 border-white">
+            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#123a6b] text-white shadow-xl flex items-center justify-center border-2 border-white animate-pulse-subtle">
               <MoveHorizontal className="w-5 h-5 text-white" />
             </div>
           </div>
         </div>
 
         {/* Card info below image */}
-        <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-2">
+        <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 px-2">
           <div>
             <h3 className="font-display text-xl font-bold text-[#123a6b] uppercase">
               {activeCase.vehicle}
             </h3>
             <p className="text-xs sm:text-sm text-[#475569] mt-1 font-sans">
-              {activeCase.damage} • <strong className="text-[#3f7d4f] font-semibold">Tiempo: {activeCase.time}</strong>
+              {activeCase.damage}
             </p>
-            <p className="text-xs text-[#123a6b] font-mono font-semibold mt-1">
-              ✓ {activeCase.locationNote}
+            <p className="text-xs text-emerald-700 font-semibold mt-1 font-mono flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 shrink-0" />
+              <span>{activeCase.locationNote}</span>
             </p>
           </div>
 
-          <a
-            href={`https://wa.me/5491122334455?text=${encodeURIComponent(`Hola Águila Blanca, quisiera cotizar la reparación de un bollo/granizo en mi ${activeCase.title}.`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-3 rounded-lg bg-[#c0272d] hover:bg-[#a51d23] text-white font-display font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm transition-all shrink-0 active:scale-95"
-          >
-            <MessageCircle className="w-4 h-4 fill-white" />
-            <span>Cotizar mi Auto</span>
-          </a>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0 w-full md:w-auto">
+            <div className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#eef1f3] border border-[#d3d9de] text-xs font-mono font-bold text-[#123a6b]">
+              <Clock className="w-4 h-4 text-[#c0272d]" />
+              <span>{activeCase.time}</span>
+            </div>
+
+            <a
+              href={`https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20vi%20el%20caso%20de%20la%20${encodeURIComponent(activeCase.vehicle)}%20y%20tengo%20un%20arreglo%20parecido.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-lg bg-[#c0272d] hover:bg-[#a51d23] text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 w-full sm:w-auto"
+            >
+              <MessageCircle className="w-4 h-4 fill-white" />
+              <span>Cotizar Caso Similar</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
