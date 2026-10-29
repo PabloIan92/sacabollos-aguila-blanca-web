@@ -19,6 +19,21 @@ export const Hero: React.FC = () => {
         </div>
 
         <div className="relative z-10 p-6 sm:p-12 lg:p-16 max-w-3xl">
+          {/* Official Workshop Seal Badge on Top Right of Hero */}
+          <div className="absolute top-6 right-6 sm:top-8 sm:right-8 z-20 hidden md:flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/25 shadow-xl">
+            <img
+              src="/assets/logo-aguila-blanca.jpg"
+              alt="Sello Oficial Águila Blanca"
+              className="h-14 sm:h-16 lg:h-20 w-auto object-contain rounded-lg shadow-sm border border-white/20"
+            />
+            <span className="mt-2 text-[10px] sm:text-[11px] font-mono font-bold tracking-widest uppercase text-sky-100">
+              Centro Técnico Oficial
+            </span>
+            <span className="text-[9px] text-[#ffd166] font-mono uppercase tracking-wider">
+              ★ PDR Homologado ★
+            </span>
+          </div>
+
           {/* Trust Badge with Pulsing Live Status */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-lg bg-white/10 border border-white/20 backdrop-blur-md text-xs font-mono font-bold uppercase tracking-wider text-sky-100 mb-6 shadow-sm">
             <span className="flex h-2 w-2 relative">

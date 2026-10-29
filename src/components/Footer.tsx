@@ -12,14 +12,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           {/* Logo & Brand Info */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl overflow-hidden bg-white p-0.5 border border-white/20 shrink-0">
-              <img
-                src="/assets/logo-aguila-blanca.jpg"
-                alt="Águila Blanca"
-                className="w-full h-full object-contain"
-              />
-            </div>
+          <div className="flex items-center gap-3.5">
+            <img
+              src="/assets/logo-aguila-blanca.jpg"
+              alt="Águila Blanca"
+              className="h-11 sm:h-12 w-auto object-contain rounded-lg shadow-sm border border-white/20 shrink-0"
+            />
             <div>
               <span className="font-display text-base font-bold uppercase tracking-wider text-white">
                 Águila Blanca

@@ -9,14 +9,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo & Brand */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-white p-1 border-2 border-white/30 shadow-sm group-hover:border-[#ffb800] transition-colors">
-              <img
-                src="/assets/logo-aguila-blanca.jpg"
-                alt="Águila Blanca Sacabollos"
-                className="w-full h-full object-contain"
-              />
-            </div>
+          <a href="#" className="flex items-center gap-3.5 group shrink-0">
+            <img
+              src="/assets/logo-aguila-blanca.jpg"
+              alt="Águila Blanca Sacabollos"
+              className="h-11 sm:h-14 md:h-15 w-auto object-contain rounded-lg shadow-md border border-white/30 shrink-0 group-hover:border-[#ffd166] transition-all"
+            />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-display text-xl sm:text-2xl font-bold tracking-wider text-white uppercase group-hover:text-[#ffd166] transition-colors">
