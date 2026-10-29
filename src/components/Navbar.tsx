@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MessageCircle, Menu, X, ExternalLink } from 'lucide-react'
+import { MessageCircle, Menu, X } from 'lucide-react'
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -48,17 +48,6 @@ export const Navbar: React.FC = () => {
 
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
-              href="https://sacabollos-aguila-blanca-hnxlp5f1s-aguila-blanca.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3.5 py-2 text-xs font-mono font-bold uppercase text-white bg-white/10 hover:bg-white/20 border border-white/25 rounded transition-all shadow-sm flex items-center gap-1.5"
-              title="Portal Interno de Casos"
-            >
-              <ExternalLink className="w-3.5 h-3.5 text-[#ffd166]" />
-              <span>Acceso Taller</span>
-            </a>
-
             <a
               href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20enviarles%20una%20foto%20para%20cotizar%20un%20bollo%20de%20mi%20auto."
               target="_blank"
@@ -122,18 +111,6 @@ export const Navbar: React.FC = () => {
                 className="px-3 py-2 rounded bg-white/15 text-[#ffd166] font-bold"
               >
                 Contacto y Dónde Estamos
-              </a>
-            </div>
-
-            <div className="pt-2 border-t border-white/15">
-              <a
-                href="https://sacabollos-aguila-blanca-hnxlp5f1s-aguila-blanca.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 text-center text-xs font-mono font-bold uppercase text-white bg-white/10 border border-white/25 rounded flex items-center justify-center gap-2"
-              >
-                <ExternalLink className="w-3.5 h-3.5 text-[#ffd166]" />
-                <span>Portal Interno del Taller</span>
               </a>
             </div>
           </div>

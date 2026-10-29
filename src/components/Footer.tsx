@@ -1,5 +1,4 @@
 import React from 'react'
-import { ExternalLink } from 'lucide-react'
 
 export const Footer: React.FC = () => {
   return (
@@ -27,16 +26,8 @@ export const Footer: React.FC = () => {
           © {new Date().getFullYear()} Águila Blanca Sacabollos. Conservación 100% de la pintura original de fábrica.
         </p>
 
-        <div>
-          <a
-            href="https://sacabollos-aguila-blanca-hnxlp5f1s-aguila-blanca.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-white/10 text-white hover:bg-white/20 border border-white/20 text-[11px] font-mono font-bold uppercase transition-colors"
-          >
-            <ExternalLink className="w-3.5 h-3.5 text-[#ffd166]" />
-            <span>Portal del Taller</span>
-          </a>
+        <div className="text-[11px] font-mono text-sky-300">
+          <span>Atención a Particulares, Aseguradoras y Flotas</span>
         </div>
       </div>
     </footer>
