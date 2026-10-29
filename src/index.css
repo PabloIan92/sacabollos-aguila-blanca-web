@@ -1,54 +1,73 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-display: 'Oswald', sans-serif;
-    --font-sans: 'IBM Plex Sans', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-  }
+@theme {
+  --color-graphite: #1b1d21;
+  --color-steel-100: #eef1f3;
+  --color-steel-200: #e2e8f0;
+  --color-steel-300: #d3d9de;
+  --color-steel-400: #94a3b8;
+  --color-steel-500: #64748b;
+  --color-steel-600: #475569;
+  --color-navy: #123a6b;
+  --color-blue: #1c4f8c;
+  --color-red: #c0272d;
+  --color-brass: #b3792f;
+  --color-green: #3f7d4f;
+  --color-white: #ffffff;
+
+  --font-display: "Oswald", sans-serif;
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --shadow-ficha: 6px 6px 0 rgba(27, 29, 33, 0.08);
+  --shadow-card: 0 1px 3px rgba(27,29,33,0.12), 0 1px 2px rgba(27,29,33,0.08);
+  --shadow-topbar: 0 2px 8px rgba(18,58,107,0.15);
 }
 
-.font-display {
-  font-family: var(--font-display);
+:root {
+  --color-graphite: #1b1d21;
+  --color-steel-100: #eef1f3;
+  --color-steel-200: #e2e8f0;
+  --color-steel-300: #d3d9de;
+  --color-steel-400: #94a3b8;
+  --color-steel-500: #64748b;
+  --color-steel-600: #475569;
+  --color-navy: #123a6b;
+  --color-blue: #1c4f8c;
+  --color-red: #c0272d;
+  --color-brass: #b3792f;
+  --color-green: #3f7d4f;
+  --color-white: #ffffff;
 }
 
-.font-sans {
+body {
+  margin: 0;
+  min-height: 100vh;
   font-family: var(--font-sans);
+  background:
+    linear-gradient(90deg, rgba(18, 58, 107, 0.025) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(0deg, rgba(27, 29, 33, 0.02) 1px, transparent 1px) 0 0 / 24px 24px,
+    #eef1f3;
+  color: #1b1d21;
 }
 
-.font-mono {
-  font-family: var(--font-mono);
+.shadow-ficha {
+  box-shadow: 6px 6px 0 rgba(27, 29, 33, 0.08);
 }
 
-/* Custom glow and glass effects */
-.glass-panel {
-  background: rgba(18, 24, 38, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.shadow-ficha-lg {
+  box-shadow: 8px 8px 0 rgba(18, 58, 107, 0.12);
 }
 
-.glass-panel-hover:hover {
-  background: rgba(24, 32, 50, 0.85);
-  border-color: rgba(255, 184, 0, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(255, 184, 0, 0.15);
+.shadow-ficha-hover {
+  transition: all 150ms ease-in-out;
 }
 
-.glow-gold {
-  box-shadow: 0 0 25px -5px rgba(255, 184, 0, 0.35);
+.shadow-ficha-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 rgba(18, 58, 107, 0.15);
 }
 
-.glow-blue {
-  box-shadow: 0 0 30px -5px rgba(28, 79, 140, 0.45);
-}
-
-/* Light beam effect simulation of PDR reflection lamps */
-.pdr-stripes {
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.03) 2px,
-    transparent 2px,
-    transparent 16px
-  );
+.shadow-card {
+  box-shadow: 0 1px 3px rgba(27,29,33,0.12), 0 1px 2px rgba(27,29,33,0.08);
 }
