@@ -6,40 +6,22 @@ export const Hero: React.FC = () => {
     <section className="relative pt-6 pb-10 sm:pt-10 sm:pb-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Featured Luxury Hero Box with Gestión App Palette */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#123a6b] via-[#154278] to-[#1c4f8c] border-2 border-[#123a6b] shadow-ficha-lg text-white">
-        {/* Subtle background image featuring iconic Argentine vehicle (Toyota Hilux) */}
+        {/* Subtle background image featuring iconic Argentine vehicle (Volkswagen Amarok V6) */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/toyota-hilux.jpg"
-            alt="Toyota Hilux con pintura original de fábrica impecable"
-            className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity"
+            src="/images/vw-amarok-v6.jpg"
+            alt="Vehículo con chapa y pintura original de fábrica"
+            className="w-full h-full object-cover object-right opacity-20 mix-blend-luminosity"
           />
           {/* Subtle reflection light bar evoking PDR inspection lamps */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#123a6b] via-[#123a6b]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#123a6b] via-[#123a6b]/95 to-transparent" />
         </div>
 
         <div className="relative z-10 p-6 sm:p-12 lg:p-16 max-w-3xl">
-          {/* Official Workshop Seal Badge on Top Right of Hero */}
-          <div className="absolute top-6 right-6 sm:top-8 sm:right-8 z-20 hidden md:flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/25 shadow-xl">
-            <img
-              src="/assets/logo-aguila-blanca.jpg"
-              alt="Sello Oficial Águila Blanca"
-              className="h-14 sm:h-16 lg:h-20 w-auto object-contain rounded-lg shadow-sm border border-white/20"
-            />
-            <span className="mt-2 text-[10px] sm:text-[11px] font-mono font-bold tracking-widest uppercase text-sky-100">
-              Centro Técnico Oficial
-            </span>
-            <span className="text-[9px] text-[#ffd166] font-mono uppercase tracking-wider">
-              ★ PDR Homologado ★
-            </span>
-          </div>
-
-          {/* Trust Badge with Pulsing Live Status */}
+          {/* Trust Badge with Live Status */}
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-lg bg-white/10 border border-white/20 backdrop-blur-md text-xs font-mono font-bold uppercase tracking-wider text-sky-100 mb-6 shadow-sm">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
-            </span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
             <Sparkles className="w-4 h-4 text-[#ffd166]" />
             <span>Técnica Artesanal PDR • Cero Masilla • Cero Repintado</span>
           </div>
