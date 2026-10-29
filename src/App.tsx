@@ -1,8 +1,10 @@
 import React from 'react'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
+import { TechnicalBlueprintInspector } from './components/TechnicalBlueprintInspector'
 import { BeforeAfterSlider } from './components/BeforeAfterSlider'
 import { PdrComparison } from './components/PdrComparison'
+import { CorporateCertifications } from './components/CorporateCertifications'
 import { DamageCalculator } from './components/DamageCalculator'
 import { InsurancePartners } from './components/InsurancePartners'
 import { ProcessSteps } from './components/ProcessSteps'
@@ -14,13 +16,19 @@ import { MessageCircle } from 'lucide-react'
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#0b0d10] text-[#e2e8f0] flex flex-col selection:bg-[#ffb800] selection:text-black">
+    <div className="min-h-screen bg-[#07090c] text-[#e2e8f0] flex flex-col selection:bg-[#ffb800] selection:text-black">
       <Navbar />
 
       <main className="flex-grow">
         <Hero />
+        <div id="planimetria">
+          <TechnicalBlueprintInspector />
+        </div>
         <BeforeAfterSlider />
         <PdrComparison />
+        <div id="homologaciones">
+          <CorporateCertifications />
+        </div>
         <DamageCalculator />
         <InsurancePartners />
         <ProcessSteps />
