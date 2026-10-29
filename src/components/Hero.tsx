@@ -68,21 +68,21 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* High-Converting Action CTAs */}
-          <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
             <a
               href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20enviarles%20una%20foto%20de%20mi%20auto%20para%20un%20presupuesto."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-xl bg-[#c0272d] hover:bg-[#a51d23] text-white font-display font-black text-base uppercase tracking-wider flex items-center justify-center gap-3 shadow-[4px_4px_0_rgba(18,58,107,0.4)] transition-all active:scale-95 group border border-white/20"
+              className="btn-pdr-primary px-7 py-3.5 rounded-lg text-white font-display font-extrabold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2.5 group"
             >
-              <MessageCircle className="w-5 h-5 fill-white group-hover:scale-110 transition-transform" />
+              <MessageCircle className="w-5 h-5 fill-white shrink-0" />
               <span>Pedir Presupuesto por WhatsApp</span>
-              <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 ml-0.5 group-hover:translate-x-0.5 transition-transform" />
             </a>
 
             <a
               href="#galeria"
-              className="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-display font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 border border-white/30 transition-all text-center backdrop-blur-sm"
+              className="btn-pdr-secondary px-6 py-3.5 rounded-lg text-white font-display font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 text-center"
             >
               <span>Ver Antes y Después Real</span>
             </a>

@@ -78,24 +78,26 @@ export const BeforeAfterGallery: React.FC = () => {
         </p>
       </div>
 
-      {/* Case Tabs for Hilux and Amarok */}
-      <div className="flex justify-center gap-3 mb-8">
-        {GALLERY_CASES.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => {
-              setActiveCase(item)
-              setSliderPosition(50)
-            }}
-            className={`px-5 py-3 rounded-xl font-display uppercase tracking-wider text-xs sm:text-sm font-bold transition-all shadow-sm ${
-              activeCase.id === item.id
-                ? 'bg-[#123a6b] text-white shadow-md ring-2 ring-[#123a6b]/20'
-                : 'bg-white text-[#475569] border-2 border-[#d3d9de] hover:bg-[#eef1f3]'
-            }`}
-          >
-            {item.title}
-          </button>
-        ))}
+      {/* Case Segmented Control for Hilux and Amarok */}
+      <div className="flex justify-center mb-8">
+        <div className="inline-flex p-1 rounded-xl bg-[#e2e8f0] border border-[#cbd5e1] shadow-inner gap-1">
+          {GALLERY_CASES.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                setActiveCase(item)
+                setSliderPosition(50)
+              }}
+              className={`px-5 py-2.5 rounded-lg font-display uppercase tracking-wider text-xs sm:text-sm font-bold transition-all duration-150 ${
+                activeCase.id === item.id
+                  ? 'bg-[#123a6b] text-white shadow-sm'
+                  : 'text-[#475569] hover:text-[#123a6b] hover:bg-white/50'
+              }`}
+            >
+              {item.title}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Comparison Container */}
@@ -171,7 +173,7 @@ export const BeforeAfterGallery: React.FC = () => {
               href={`https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20vi%20el%20caso%20de%20la%20${encodeURIComponent(activeCase.vehicle)}%20y%20tengo%20un%20arreglo%20parecido.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-lg bg-[#c0272d] hover:bg-[#a51d23] text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 w-full sm:w-auto"
+              className="btn-pdr-primary px-4 py-2.5 rounded-lg text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
               <span>Cotizar Caso Similar</span>

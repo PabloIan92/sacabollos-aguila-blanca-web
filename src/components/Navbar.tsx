@@ -52,7 +52,7 @@ export const Navbar: React.FC = () => {
               href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20enviarles%20una%20foto%20para%20cotizar%20un%20bollo%20de%20mi%20auto."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 text-xs sm:text-sm font-display font-bold uppercase tracking-wider text-white bg-[#c0272d] hover:bg-[#a51d23] active:scale-95 rounded shadow-[3px_3px_0_rgba(0,0,0,0.2)] transition-all flex items-center gap-2"
+              className="btn-pdr-primary px-4 py-2 text-xs font-display font-bold uppercase tracking-wider text-white rounded-lg flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
               <span>Consultar WhatsApp</span>
@@ -65,17 +65,17 @@ export const Navbar: React.FC = () => {
               href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20cotizar%20un%20arreglo."
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white bg-[#c0272d] rounded shadow"
+              className="btn-pdr-primary p-2 text-white rounded-lg"
               aria-label="Pedir Presupuesto"
             >
-              <MessageCircle className="w-5 h-5 fill-white" />
+              <MessageCircle className="w-4 h-4 fill-white" />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-white bg-white/10 hover:bg-white/20 border border-white/25 rounded"
+              className="btn-pdr-secondary p-2 text-white rounded-lg"
               aria-label="Menú"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

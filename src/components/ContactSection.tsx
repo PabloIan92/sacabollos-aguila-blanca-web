@@ -73,9 +73,9 @@ export const ContactSection: React.FC = () => {
             href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20les%20adjunto%20fotos%20del%20daño%20de%20mi%20auto%20para%20presupuestar."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#c0272d] hover:bg-[#a51d23] text-white font-display font-black text-lg sm:text-xl uppercase tracking-wider shadow-[4px_4px_0_rgba(0,0,0,0.35)] transition-all active:scale-95 group w-full sm:w-auto border border-white/20"
+            className="btn-pdr-primary inline-flex items-center justify-center gap-3 px-8 py-4.5 rounded-xl text-white font-display font-black text-base sm:text-lg uppercase tracking-wider group w-full sm:w-auto"
           >
-            <MessageCircle className="w-6 h-6 fill-white group-hover:scale-110 transition-transform" />
+            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 fill-white" />
             <span>Enviar Fotos por WhatsApp Ahora</span>
           </a>
         </div>

@@ -8,7 +8,7 @@ export const StickyBottomBar: React.FC = () => {
         href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20enviarles%20una%20foto%20para%20un%20presupuesto."
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full py-3.5 px-4 rounded-xl bg-[#c0272d] text-white font-display font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg active:scale-95"
+        className="btn-pdr-primary w-full py-3.5 px-4 rounded-xl text-white font-display font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2"
       >
         <MessageCircle className="w-5 h-5 fill-white" />
         <span>Enviar Foto por WhatsApp</span>

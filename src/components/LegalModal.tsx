@@ -307,7 +307,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
           </span>
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-xl bg-[#123a6b] hover:bg-[#1c4f8c] text-white font-display uppercase tracking-wider font-bold transition-all text-xs w-full sm:w-auto"
+            className="btn-pdr-dark px-6 py-2.5 rounded-lg text-white font-display uppercase tracking-wider font-bold text-xs w-full sm:w-auto"
           >
             Entendido y Aceptar
           </button>
