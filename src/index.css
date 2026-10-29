@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Oswald', sans-serif;
+    --font-sans: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom glow and glass effects */
+.glass-panel {
+  background: rgba(18, 24, 38, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(24, 32, 50, 0.85);
+  border-color: rgba(255, 184, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(255, 184, 0, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px -5px rgba(255, 184, 0, 0.35);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px -5px rgba(28, 79, 140, 0.45);
+}
+
+/* Light beam effect simulation of PDR reflection lamps */
+.pdr-stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 16px
+  );
+}
