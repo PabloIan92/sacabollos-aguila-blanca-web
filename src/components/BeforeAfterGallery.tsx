@@ -9,26 +9,29 @@ interface BeforeAfterCase {
   beforeImg: string
   afterImg: string
   time: string
+  locationNote: string
 }
 
 const GALLERY_CASES: BeforeAfterCase[] = [
   {
-    id: 'case-1',
-    title: 'Capot con Granizo Severo',
-    vehicle: 'Pickup 4x4 — Pintura Original Conservada',
-    damage: 'Más de 60 impactos de granizo seco con nervaduras deformadas.',
+    id: 'hilux',
+    title: 'Toyota Hilux 4x4',
+    vehicle: 'Toyota Hilux SRV — Capot y Techo',
+    damage: 'Más de 70 impactos de granizo seco con nervaduras deformadas tras tormenta.',
     beforeImg: '/images/hail-dent.jpg',
-    afterImg: '/images/luxury-finish.jpg',
-    time: '24 horas',
+    afterImg: '/images/toyota-hilux.jpg',
+    time: '24 horas hábiles',
+    locationNote: 'Preservación 100% de la pintura blanca de fábrica.',
   },
   {
-    id: 'case-2',
-    title: 'Portazo en Nervadura Viva',
-    vehicle: 'Sedán Ejecutivo — Puerta Delantera',
-    damage: 'Golpe profundo de estacionamiento con pliegue marcado de chapa.',
+    id: 'amarok',
+    title: 'Volkswagen Amarok V6',
+    vehicle: 'Volkswagen Amarok V6 — Puerta Delantera y Lateral',
+    damage: 'Portazo profundo de estacionamiento con pliegue marcado sobre nervio vivo.',
     beforeImg: '/images/car-hood.jpg',
-    afterImg: '/images/car-reflection.jpg',
-    time: '4 horas',
+    afterImg: '/images/vw-amarok-v6.jpg',
+    time: '4 horas en el mismo día',
+    locationNote: 'Línea de diseño recuperada sin masilla ni repintado.',
   },
 ]
 
@@ -61,17 +64,17 @@ export const BeforeAfterGallery: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#123a6b]/10 border border-[#123a6b]/20 text-xs font-mono font-bold uppercase tracking-wider text-[#123a6b] mb-3">
           <Sparkles className="w-3.5 h-3.5 text-[#c0272d]" />
-          <span>Evidencia Real</span>
+          <span>Casos Reales en Argentina</span>
         </div>
         <h2 className="font-display text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-[#123a6b]">
           Fotos de <span className="text-[#c0272d]">Antes y Después</span>
         </h2>
         <p className="mt-3 text-[#475569] text-base sm:text-lg font-sans">
-          Arrastrá el control hacia los lados para comprobar la precisión del acabado final.
+          Deslizá el control hacia los lados para comprobar cómo borramos el daño en los autos más utilizados del país.
         </p>
       </div>
 
-      {/* Case Tabs */}
+      {/* Case Tabs for Hilux and Amarok */}
       <div className="flex justify-center gap-3 mb-8">
         {GALLERY_CASES.map((item) => (
           <button
@@ -102,24 +105,24 @@ export const BeforeAfterGallery: React.FC = () => {
           onTouchMove={handleTouchMove}
           className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden cursor-ew-resize select-none border-2 border-[#d3d9de] shadow-inner bg-slate-900"
         >
-          {/* DESPUÉS (Background) */}
+          {/* DESPUÉS (Background: Restored Argentine car) */}
           <img
             src={activeCase.afterImg}
-            alt="Auto restaurado a la perfección"
+            alt={`Resultado PDR en ${activeCase.vehicle}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded bg-[#123a6b] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md">
             ✓ DESPUÉS (Restaurado)
           </div>
 
-          {/* ANTES (Foreground clipped) */}
+          {/* ANTES (Foreground clipped: Dents and damage) */}
           <div
             className="absolute inset-0 overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <img
               src={activeCase.beforeImg}
-              alt="Auto con granizo o bollo antes de reparar"
+              alt={`Daño inicial en chapa ${activeCase.vehicle}`}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded bg-[#c0272d] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-md">
@@ -147,16 +150,19 @@ export const BeforeAfterGallery: React.FC = () => {
             <p className="text-xs sm:text-sm text-[#475569] mt-1 font-sans">
               {activeCase.damage} • <strong className="text-[#3f7d4f] font-semibold">Tiempo: {activeCase.time}</strong>
             </p>
+            <p className="text-[11px] text-slate-500 font-mono mt-0.5">
+              {activeCase.locationNote}
+            </p>
           </div>
 
           <a
-            href="https://wa.me/5491122334455?text=Hola%20Águila%20Blanca,%20quisiera%20consultar%20por%20un%20arreglo%20como%20el%20de%20la%20web."
+            href={`https://wa.me/5491122334455?text=${encodeURIComponent(`Hola Águila Blanca, quisiera cotizar la reparación de un bollo/granizo en mi ${activeCase.title}.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-3 rounded-lg bg-[#c0272d] hover:bg-[#a51d23] text-white font-display font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-sm transition-all shrink-0 active:scale-95"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
-            <span>Cotizar Caso Similar</span>
+            <span>Cotizar mi Auto</span>
           </a>
         </div>
       </div>

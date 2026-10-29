@@ -6,14 +6,14 @@ export const Hero: React.FC = () => {
     <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Featured Luxury Hero Box with Gestión App Palette */}
       <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#123a6b] via-[#164379] to-[#1c4f8c] border-2 border-[#123a6b] shadow-ficha-lg text-white">
-        {/* Subtle background image */}
+        {/* Subtle background image featuring iconic Argentine vehicle (Toyota Hilux) */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-car.jpg"
-            alt="Auto de alta gama con pintura impecable"
+            src="/images/toyota-hilux.jpg"
+            alt="Toyota Hilux con pintura original impecable"
             className="w-full h-full object-cover object-center opacity-30 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#123a6b] via-[#123a6b]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#123a6b] via-[#123a6b]/85 to-transparent" />
         </div>
 
         <div className="relative z-10 p-6 sm:p-12 lg:p-16 max-w-3xl">
